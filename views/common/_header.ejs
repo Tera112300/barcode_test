@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>管理画面</title>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/yegor256/tacit@gh-pages/tacit-css-1.5.5.min.css">
+    <script src="//code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
+    <script src="/asset/js/function.js"></script>
+    <style>
+        header{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0;
+        }
+        header h1,
+        header p{
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+  
+    <header>
+        <h1>nodejsサンプル</h1>
+
+        <% if (current) { %>
+        <p><a href="/administration/logout">ログアウト</a></p>
+        <% } else { %>
+        <p><a href="/administration/login">ログイン</a></p>
+        <% } %>
+    </header>
+<main>

@@ -1,0 +1,12 @@
+<%- include('common/_header.ejs') %>
+<h2>会員ユーザー一覧</h2>
+
+
+<table>
+  <% data.users.forEach(function (value, key) { %>
+  <tr>
+    <th><a href="administration/user/<%= value.objectId %>">ユーザー名：<%= value.userName %></a></th>
+  </tr>
+  <% }); %>
+</table>
+<%- include('common/_footer.ejs') %>

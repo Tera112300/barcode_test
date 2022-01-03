@@ -1,0 +1,13 @@
+<%- include('common/_header.ejs') %>
+    <h2>ログイン</h2>
+    <form action="/administration/login/check" method="post">
+        <div>
+            <label>名前:</label>
+            <input type="text" placeholder="名前をご入力ください" name="name">
+            <label>パスワード:</label>
+            <input type="password" placeholder="パスワードをご入力ください" name="password">
+        </div>
+        <input type="reset" value="リセット">
+        <input type="submit" value="送信">
+    </form>
+<%- include('common/_footer.ejs') %>

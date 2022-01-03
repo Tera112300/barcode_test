@@ -1,0 +1,27 @@
+<%- include('common/_header.ejs') %>
+<h2>ユーザ詳細</h2>
+<h3>ユーザ名</h3>
+
+<%= data.user_data.userName %>
+<h3>QRコード</h3>
+<div id="img_qr">
+</div>
+
+<p>会場の来場記録<br>
+  <% if (data.recode_data.createDate) { %>
+  <%= moment(data.recode_data.createDate).format('YYYY-MM-DD HH:mm:ss'); %>
+  <% } else { %>
+    来場していません。
+  <% } %>
+</p>
+
+
+<p><a href="/administration">一覧へ戻る</a></p>
+<script>
+    $(function(){
+        var qrtext = "<%= data.latitude %>,<%= data.longitude %>,<%= data.user_id %>";
+        $("#img_qr").html("");
+        $("#img_qr").qrcode({text:qrtext});
+      });
+</script>
+<%- include('common/_footer.ejs') %>
